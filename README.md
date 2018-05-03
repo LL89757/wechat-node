@@ -13,7 +13,7 @@ npm install wechat-node-sp
 ## Usage
 初始化
 ```js
-var weChatApi = require("wechatapi_node");
+var weChatApi = require("wechat-node-sp");
 
 var wechatApi = weChatApi({
             appId,
