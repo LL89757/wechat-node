@@ -7,7 +7,7 @@
 
 ## Installation
 ```
-npm install wechatapi_node
+npm install wechat-node-sp
 ```
 
 ## Usage
