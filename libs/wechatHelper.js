@@ -2,7 +2,7 @@
  * @Author: li.lv 
  * @Date: 2017-12-11 20:18:06 
  * @Last Modified by: li.lv
- * @Last Modified time: 2018-05-03 10:57:23
+ * @Last Modified time: 2018-06-13 11:17:50
  * @Description: 微信通用方法封装库 
  */
 const crypto = require("crypto");
@@ -191,7 +191,7 @@ Wechat.prototype.getRefundData = async function (req) {
 
 //获取小程序二维码
 Wechat.prototype.getMiniProgramQrcode = async function (token, data) {
-    var result = await wechatService.getQrcode(token, data);
+    var result = await wechatService.getMiniProgramQrcode(token, data);
     return result;
 }
 
