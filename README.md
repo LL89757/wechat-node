@@ -19,7 +19,7 @@ var wechatApi = weChatApi({
             appId,
             appSecret,
             mch_id,//微信商户平台ID
-            pfx: fs.readFileSync("./apiclient_cert.p12"),//微信商户平台支付正式
+            pfx: fs.readFileSync("./apiclient_cert.p12"),//微信商户平台支付证书
             payKey//微信商户平台API秘钥
         })
 ```
