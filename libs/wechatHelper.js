@@ -2,7 +2,7 @@
  * @Author: li.lv 
  * @Date: 2017-12-11 20:18:06 
  * @Last Modified by: li.lv
- * @Last Modified time: 2018-06-13 11:17:50
+ * @Last Modified time: 2019-12-20 15:00:51
  * @Description: 微信通用方法封装库 
  */
 const crypto = require("crypto");
@@ -175,8 +175,8 @@ Wechat.prototype.wechatDataAuth = async function (payData) {
 //获取微信推送通知信息
 Wechat.prototype.getWechatNoticeData = async function (req) {
     var result,
-        wechatDataXml = await util.getWechatData(req),
-        wechatData = await util.parseXml(wechatDataXml);
+        wechatDataXml = await utils.getWechatData(req),
+        wechatData = await utils.parseXml(wechatDataXml);
     return result;
 }
 
@@ -185,7 +185,7 @@ Wechat.prototype.getRefundData = async function (req) {
     var result,
         wechatData = await this.getWechatNoticeData(req),
         refundDetailXml = utils.getRefundData(wxData.req_info),
-        refundData = await util.parseXml(refundDetailXml);
+        refundData = await utils.parseXml(refundDetailXml);
     return result;
 }
 
@@ -204,7 +204,7 @@ Wechat.prototype.responseSuccess = async function ({
         return_code: "SUCCESS",
         return_msg: return_msg
     }
-    var responseXml = util.toXml(responseData);
+    var responseXml = utils.toXml(responseData);
     ctx.response.type = 'application/xml';
     ctx.body = response;
 }
@@ -218,7 +218,7 @@ Wechat.prototype.responseFail = async function ({
         return_code: "FAIL",
         return_msg: return_msg
     }
-    var responseXml = util.toXml(responseData);
+    var responseXml = utils.toXml(responseData);
     ctx.response.type = 'application/xml';
     ctx.body = response;
 }
